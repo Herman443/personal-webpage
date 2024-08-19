@@ -25,16 +25,16 @@ export default async function WebsiteInfo() {
             sandbox-miljø for videre testing av interessante teknologier.
           </p>
           <p className="text-lg font-normal pt-1" style={{ maxWidth: 800 }}>
-            Skills I have attempted to demonstrate:
+            Kompetanse jeg har forsøkt å demonstrere:
           </p>
           <li>
-            Data communication and network administration through web deployment
+            Datakommunikasjon og nettverksadministrasjon ved web deployment
           </li>
-          <li>Understanding of information security</li>
-          <li>Use of cloud services</li>
-          <li>Development of user interfaces and design in the front-end</li>
-          <li>Data generation and retrieval in the back-end</li>
-          <li>Use of external APIs</li>
+          <li>Innsikt i informasjonssikkerhet</li>
+          <li>Bruk av sky-tjenester</li>
+          <li>Utvikling av brukergrensesnitt og design i front-end</li>
+          <li>Generering og utehenting av data i back-end</li>
+          <li>Bruk av eskterne API-er</li>
         </div>
         <div className="flex flex-col items-center w-full gap-6">
           <div
