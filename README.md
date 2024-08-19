@@ -1,1 +1,1 @@
-Personal Next.js website hosted on a Raspberry Pi, supported by hopes and dreams
+Personal Next.js website hosted whit a Raspberry Pi, built on hopes and dreams

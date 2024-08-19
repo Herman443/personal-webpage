@@ -24,14 +24,18 @@
 }
 ::-webkit-scrollbar-thumb:hover
 {
-	background-color: #082f49;
+	background-color: #00205B;
 }
 
 body {
   background-image: url("/Background.jpg");
 }
 
+.blåtekst {
+    color: #00205B;
+}
+
 .hover\:text-rød:hover {
   --tw-text-opacity: 1;
-  color: #C8102E;
+  color: #BA0C2F;
 }

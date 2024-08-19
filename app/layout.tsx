@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
-  weight: "300",
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -35,7 +35,6 @@ export default function RootLayout({
       </head>
       <body className={roboto.className}>
         <Navbar />
-        <div style={{ height: 120 }}></div>
         {children}
       </body>
     </html>
