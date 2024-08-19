@@ -17,6 +17,25 @@ export default async function WebsiteInfo() {
     <div className="flex flex-col items-center w-full px-2 py-20">
       <div className="flex flex-col items-center w-fit p-6 gap-12 bg-white rounded-xl border border-black shadow-2xl">
         <p className="text-5xl font-medium">Nettside info</p>
+        <div className="flex flex-col items-start text-lg font-light w-full p-6 bg-white border rounded-xl shadow-lg shadow-gray-400">
+          <p className="text-3xl font-medium">Oversikt</p>
+          <p className="text-lg font-normal" style={{ maxWidth: 800 }}>
+            Denne hjemmesiden ble hovedsaklig laget for å teste ut hosting av
+            web applikasjon på egen maskinvare, og kommer til å fungere som et
+            sandbox-miljø for videre testing av interessante teknologier.
+          </p>
+          <p className="text-lg font-normal pt-1" style={{ maxWidth: 800 }}>
+            Skills I have attempted to demonstrate:
+          </p>
+          <li>
+            Data communication and network administration through web deployment
+          </li>
+          <li>Understanding of information security</li>
+          <li>Use of cloud services</li>
+          <li>Development of user interfaces and design in the front-end</li>
+          <li>Data generation and retrieval in the back-end</li>
+          <li>Use of external APIs</li>
+        </div>
         <div className="flex flex-col items-center w-full gap-6">
           <div
             className="flex flex-col w-full items-center p-3 bg-white border rounded-xl shadow-lg shadow-gray-400"
@@ -36,7 +55,7 @@ export default async function WebsiteInfo() {
               </p>
               <p>
                 <b className="font-medium">Svar:</b> Jeg hadde én tilgjengelig,
-                prosessen er et morsomt prosjekt, jeg har lært mye nytt, det er
+                det gjorde prosjektet mer unikt, jeg har lært mye nytt, det er
                 en utrolig søt maskin og studentbudskjettet har ikke rom for
                 sky-hosting.
               </p>
@@ -56,10 +75,9 @@ export default async function WebsiteInfo() {
                 {"  "}
                 fra å kompilere sidene hver gang de blir besøkt, som gjør
                 nettsiden mye raskere og egnet til å håndtere flere brukere. Om
-                serveren hadde vært en kraftigere maskin eller i sky ville et
-                dynamisk build vært kult for muligheten til å samhandle i
-                sanntid med data på serveren (som for eksempel tilstanden under)
-                uten å sette opp et API.
+                deployment hadde vært på en kraftigere maskin eller i sky ville
+                et dynamisk build vært kult for å bedre benytte seg av Next.js
+                sine egenskaper.
               </p>
             </span>
             <span style={{ maxWidth: 800 }}>
@@ -68,18 +86,9 @@ export default async function WebsiteInfo() {
               </p>
               <p>
                 <b className="font-medium">Svar:</b> I denne web-stacken
-                håndterer de DNS-requests knyttet til mitt domene, filtrerer
-                nettverkstrafikk som HTTP inn mot serveren (brannmur) og knytter{" "}
-                {"  "}
-                <i
-                  className="hover:cursor-help"
-                  title="Fortsatt bare en Raspberry Pi"
-                >
-                  serveren
-                </i>
-                {"  "}
-                til internett via en IPsec-tunnel. Utover det gjør de også det
-                meste innenfor sky-tjenester.
+                håndterer de DNS-requests knyttet til domenet, filtrerer
+                nettverkstrafikk som HTTP inn mot serveren (brannmur) og knytter
+                applikasjonen til internett via en IPsec-tunnel.
               </p>
             </span>
             <span style={{ maxWidth: 800 }}>
@@ -88,28 +97,18 @@ export default async function WebsiteInfo() {
               </p>
               <p>
                 <b className="font-medium">Svar:</b> Takket være IPsec-tunnelen
-                er det som om Raspberry Pi&apos;en er tilkoblet Cloudflare sitt
-                nettverk direkte, som gjør at jeg slipper å port-forwarde fra
-                hjemmenettverket mitt. Det kan sammenlignes med å installere en
-                hundeluke i inngangsdøren: veldig behagelig for min egen hund
-                men også tilgjengelig for andre dyr og skapninger om sikkerheten
-                ikke er god nok. Som en bonus kan jeg ta med {"  "}
-                <i
-                  className="hover:cursor-help"
-                  title="Fortsatt bare en Raspberry Pi"
-                >
-                  serveren
-                </i>
-                {"  "}
-                hvor som helst og starte den opp uten mer konfigurasjon enn
-                tilkobling til internett.
+                er Raspberry Pi&apos;en tilkoblet Cloudflare sitt nettverk
+                &quot;direkte&quot;, som gjør at jeg slipper å port-forwarde fra
+                hjemmenettverket mitt. Å gjøre det kan sammenlignes med å
+                installere en hundeluke i inngangsdøren hjemme: veldig behagelig
+                for min egen hund men også tilgjengelig for andre dyr og
+                skapninger om sikkerheten ikke er god nok. Som en bonus kan jeg
+                ta med serveren hvor som helst og starte den opp uten mer
+                konfigurasjon enn tilkobling til internett.
               </p>
             </span>
           </div>
-          <div
-            className="flex flex-col w-full px-10 py-5 text-base gap-3 border rounded-xl shadow-lg shadow-gray-400 bg-white"
-            style={{ maxWidth: "400px" }}
-          >
+          <div className="flex flex-col w-full px-10 py-5 text-base gap-3 border rounded-xl shadow-lg shadow-gray-400 bg-white">
             <span>
               <p className="text-3xl font-medium">Server tilstand</p>
               <p className="text-sm">(Verdier oppdateres ved reboot)</p>
@@ -117,7 +116,6 @@ export default async function WebsiteInfo() {
             <div className="">
               <h3 className="text-2xl font-medium text-foreground">Generelt</h3>
               {[
-                ["Hostname", systemInfo.os.hostname()],
                 ["Plattform", systemInfo.os.platform()],
                 ["Arkitektur", systemInfo.os.arch()],
                 ["CPU Temperatur", `${systemInfo.cpuTemp.toFixed(1)}°C`],
