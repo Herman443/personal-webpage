@@ -103,6 +103,13 @@ const Navbar = ({}: {}) => {
                 </Link>
                 <Link
                   onClick={() => setTimeout(() => setHamburger(false), 50)}
+                  className="w-fit"
+                  href={lang == "en" ? "/en/api-list" : "/api-list"}
+                >
+                  <p>{lang == "en" ? "[API's]" : "[API's]"}</p>
+                </Link>
+                <Link
+                  onClick={() => setTimeout(() => setHamburger(false), 50)}
                   target="_blank"
                   className="flex flex-row justify-start w-fit"
                   href="https://github.com/Herman443"
@@ -176,6 +183,11 @@ const Navbar = ({}: {}) => {
               <Link href={lang == "en" ? "/en/cv" : "/cv"}>
                 <p className="hover:text-rød hover:cursor-pointer">[CV]</p>
               </Link>
+              <Link href={lang == "en" ? "/en/api-list" : "/api-list"}>
+                <p className="hover:text-rød hover:cursor-pointer">
+                  {lang == "en" ? "[API's]" : "[API's]"}
+                </p>
+              </Link>
               <Link
                 target="_blank"
                 className="flex flex-row justify-start hover:text-rød hover:cursor-pointer"
@@ -247,6 +259,11 @@ const Navbar = ({}: {}) => {
               </Link>
               <Link href={lang == "en" ? "/en/cv" : "/cv"}>
                 <p className="hover:text-rød hover:cursor-pointer">[CV]</p>
+              </Link>
+              <Link href={lang == "en" ? "/en/api-list" : "/api-list"}>
+                <p className="hover:text-rød hover:cursor-pointer">
+                  {lang == "en" ? "[API's]" : "[API's]"}
+                </p>
               </Link>
               <Link
                 target="_blank"

@@ -35,7 +35,36 @@ body {
     color: #00205B;
 }
 
+.hover\:blåknapp:hover {
+    color: white;
+    background-color: #00205B;
+  }
+
 .hover\:text-rød:hover {
   --tw-text-opacity: 1;
   color: #BA0C2F;
 }
+
+@keyframes flipAnimation {
+    0% {
+      transform: translateY(0px) rotateX(0deg);
+    }
+    25% {
+        transform: translateY(-256px) rotateX(180deg);
+    }
+    50% {
+      transform: translateY(-300px) rotateX(360deg);
+    }
+    75% {
+        transform: translateY(-256px) rotateX(540deg);
+    }
+    100% {
+      transform: translateY(0px) rotateX(720deg);
+    }
+  }
+  
+  .flip {
+    position: relative;
+    animation: flipAnimation 1s ease-in-out;
+    transform-style: preserve-3d;
+  }
