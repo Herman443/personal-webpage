@@ -3,13 +3,23 @@ import { getSystemDetails } from "@/lib/system";
 export default async function WebsiteInfo() {
   const systemInfo = await getSystemDetails();
 
+  const addZero = (tall: number) => {
+    let ny = "";
+    if (tall < 10) {
+      ny = "0" + tall;
+    } else {
+      ny = "" + tall;
+    }
+    return ny;
+  };
+
   const getTime = () => {
     const now = new Date();
-    const day = now.getDate();
-    const month = now.getMonth();
+    const day = addZero(now.getDate());
+    const month = addZero(now.getMonth() + 1);
     const year = now.getFullYear();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    const hours = addZero(now.getHours());
+    const minutes = addZero(now.getMinutes());
     return `${day}.${month}.${year} at ${hours}:${minutes}.`;
   };
 
