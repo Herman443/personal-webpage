@@ -33,7 +33,7 @@ export default function Home() {
           className="flex"
           onClick={() => {
             clicks == 20
-              ? (location.href = "/drikkelek")
+              ? (location.href = "https://dranks.hermanostengen.com/")
               : setClicks(clicks + 1);
           }}
         >
@@ -129,7 +129,7 @@ export default function Home() {
           className="flex"
           onClick={() => {
             clicks == 20
-              ? (location.href = "/drikkelek")
+              ? (location.href = "https://dranks.hermanostengen.com/")
               : setClicks(clicks + 1);
           }}
           style={{ maxWidth: "25%" }}
@@ -170,7 +170,7 @@ export default function Home() {
         <div
           onClick={() => {
             clicks == 20
-              ? (location.href = "/drikkelek")
+              ? (location.href = "https://dranks.hermanostengen.com/")
               : setClicks(clicks + 1);
           }}
           className="flex"
