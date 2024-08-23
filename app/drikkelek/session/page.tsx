@@ -30,7 +30,7 @@ const Session = () => {
         setAktiv(aktiv + 1);
       }
       if (q >= data.length) {
-        setStart("Gratulerer med vel gjennomført drikkelek :)");
+        setStart("Gratulerer med vel gjennomført drikkelek :)<br/>");
         setSlutt("En skål for hosten!");
         setFerdig(true);
       } else {
@@ -74,9 +74,9 @@ const Session = () => {
       q % 4 == 1
         ? "#34d399"
         : q % 4 == 2
-        ? "#FFA500"
-        : q % 4 == 3
         ? "#A2BFFE"
+        : q % 4 == 3
+        ? "#FFA500"
         : "#F5F5DC",
     maxWidth: 400,
   };
