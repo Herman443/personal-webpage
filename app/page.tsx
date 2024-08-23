@@ -1,9 +1,11 @@
 "use client";
 
+import { Herr_Von_Muellerhoff } from "next/font/google";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [clientWidth, setClientWidth] = useState<number>(1200);
+  const [clicks, setClicks] = useState<number>(0);
 
   const handleResize = () => {
     setClientWidth(window.innerWidth);
@@ -27,13 +29,28 @@ export default function Home() {
           minHeight: "60vh",
         }}
       >
-        <div className="flex">
+        <div
+          className="flex"
+          onClick={() => {
+            clicks == 20
+              ? (location.href = "/drikkelek")
+              : setClicks(clicks + 1);
+          }}
+        >
           <img
             className="flex rounded-full object-cover shadow-2xl shadow-gray-400"
             style={
               clientWidth < 420
-                ? { height: 180, width: 180, maxWidth: 400 }
-                : { height: 200, width: 200, maxWidth: 400 }
+                ? {
+                    height: 180 + clicks,
+                    width: 180 + clicks,
+                    maxWidth: 400,
+                  }
+                : {
+                    height: 200 + clicks,
+                    width: 200 + clicks,
+                    maxWidth: 400,
+                  }
             }
             src="/Profile.jpg"
           ></img>
@@ -108,10 +125,18 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex" style={{ maxWidth: "25%" }}>
+        <div
+          className="flex"
+          onClick={() => {
+            clicks == 20
+              ? (location.href = "/drikkelek")
+              : setClicks(clicks + 1);
+          }}
+          style={{ maxWidth: "25%" }}
+        >
           <img
-            style={{ maxWidth: 400 }}
-            className="flex rounded-full h-min object-cover shadow-2xl shadow-gray-400"
+            style={{ width: "100%", maxWidth: 400 + clicks }}
+            className="flex flex-shrink rounded-full h-min object-cover shadow-2xl shadow-gray-400"
             src="/Profile.jpg"
           ></img>
         </div>
@@ -142,9 +167,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex" style={{ maxWidth: "25%" }}>
+        <div
+          onClick={() => {
+            clicks == 20
+              ? (location.href = "/drikkelek")
+              : setClicks(clicks + 1);
+          }}
+          className="flex"
+          style={{ maxWidth: "25%" }}
+        >
           <img
-            style={{ maxWidth: 400 }}
+            style={{ width: "100%", maxWidth: 400 + clicks }}
             className="flex rounded-full h-min object-cover shadow-2xl shadow-gray-400"
             src="/Profile.jpg"
           ></img>
