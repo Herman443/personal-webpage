@@ -78,6 +78,7 @@ const Session = () => {
         : q % 4 == 3
         ? "#A2BFFE"
         : "#F5F5DC",
+    maxWidth: 400,
   };
 
   return (

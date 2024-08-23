@@ -9,6 +9,7 @@ const Drikkelek = () => {
   const [count, setCount] = useState<number>(5);
   const [spillere, setSpillere] = useState<string[]>(Array(5).fill(""));
   const [riktig, setRiktig] = useState<passCheck | any>(null);
+  const [wrong, setWrong] = useState<boolean>(false);
 
   const handleInputChange = (index: number, value: string) => {
     const updatedSpillere = [...spillere];
@@ -21,7 +22,7 @@ const Drikkelek = () => {
     const pass = (document.getElementById("passord") as HTMLInputElement)
       ?.value;
 
-    fetch("https://coin.hermanostengen.com/password?p=" + pass)
+    fetch("https://coin.hermanostengen.com/password?p=" + pass.toLowerCase())
       .then((response) => response.json())
       .then((data) => {
         setRiktig(data);
@@ -40,7 +41,7 @@ const Drikkelek = () => {
             alert("Du må ha minst 2 spillere");
           }
         } else {
-          alert("Feil passord!");
+          setWrong(true);
         }
       })
       .catch((error) => {
@@ -105,13 +106,15 @@ const Drikkelek = () => {
         </div>
 
         <div className="flex flex-row gap-2 text-lg items-center pt-6">
-          <p>Passord: </p>
+          <p>Kode: </p>
           <input
             className="rounded-lg p-1 w-36 text-base border border-black"
             type="password"
             id="passord"
+            placeholder="hint: hvem er kul"
           />
         </div>
+        {wrong && <p className="text-red-500">Feil kode</p>}
         <button
           onClick={startSpill}
           className="flex flex-row rounded-full text-lg items-center bg-emerald-600 shadow-lg active:bg-emerald-500 active:shadow-gray-300 text-white border border-black px-4 py-1 mt-2"
