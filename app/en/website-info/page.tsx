@@ -119,7 +119,7 @@ export default function WebsiteInfo() {
             <div className="flex flex-col w-full px-10 py-5 text-base gap-3 border rounded-xl shadow-lg shadow-gray-400 bg-white">
               <span>
                 <p className="text-3xl font-medium">Server Status</p>
-                <p className="text-sm">(Values update in real-time)</p>
+                <p className="text-sm">(Values update on refresh)</p>
               </span>
               <div className="">
                 <h3 className="text-2xl font-medium text-foreground">

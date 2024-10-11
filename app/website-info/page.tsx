@@ -120,7 +120,7 @@ export default function WebsiteInfo() {
             <div className="flex flex-col w-full px-10 py-5 text-base gap-3 border rounded-xl shadow-lg shadow-gray-400 bg-white">
               <span>
                 <p className="text-3xl font-medium">Server tilstand</p>
-                <p className="text-sm">(Verdier hentes i sanntid)</p>
+                <p className="text-sm">(Verdier hentes ved refresh)</p>
               </span>
               <div className="">
                 <h3 className="text-2xl font-medium text-foreground">
